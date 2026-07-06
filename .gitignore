@@ -18,3 +18,6 @@ data/store.duckdb.wal
 node_modules/
 .next/
 .vercel/
+
+# Derived analytics cache is committed (report.json/parquet) so the dashboard has
+# data without a rebuild, but the DuckDB binary stays out (rebuildable from log).

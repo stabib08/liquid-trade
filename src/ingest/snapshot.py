@@ -25,6 +25,11 @@ from .. import store
 from ..providers.coinvest_provider import CoInvestPositioningProvider
 from ..providers.yfinance_provider import YFinanceProvider
 
+# Thematic-factor ETFs pulled on every run regardless of which baskets are
+# selected, so the Phase-3 factor regressions always have their factor universe
+# (market/SPY, growth/QQQ, rates/TLT, semis/SOXX, utilities/XLU, momentum/MTUM).
+FACTOR_UNIVERSE = ["SPY", "QQQ", "TLT", "SOXX", "XLU", "MTUM"]
+
 
 def _code_version() -> str | None:
     try:
@@ -49,8 +54,8 @@ def run(basket_ids: list[str] | None = None, period: str = "5d") -> dict:
             degradation.append({"stage": "config", "detail": f"unknown basket id {mb!r}"})
 
     # Union of every ticker any selected basket needs (constituents + benchmarks
-    # + comparator + factor ETFs).
-    tickers: list[str] = []
+    # + comparator + factor ETFs) plus the always-on thematic factor universe.
+    tickers: list[str] = list(FACTOR_UNIVERSE)
     for b in all_baskets:
         for t in b.all_price_tickers():
             if t not in tickers:

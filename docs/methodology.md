@@ -62,10 +62,35 @@ not cleanly provide. Our rule, to stay honest:
   in `docs/limitations.md`. Going forward, each run captures the then-current
   shares, so the series becomes properly point-in-time from inception onward.
 
+## Phase 3 analytics decisions
+
+| Choice | Value | Defense |
+|---|---|---|
+| Return basis | daily simple returns from `adj_close` | standard; split/div adjusted |
+| Risk-free | FF daily `RF` | consistent between Sharpe and factor regressions |
+| Basket construction | market-cap weight, monthly rebalance (first trading day), buy-and-hold between rebalances (fixed shares within month) | unambiguous, no daily-rebalance lookahead |
+| Sample start per basket | first date all constituents have prices | weights always well-defined; each basket's window is reported (AI-power effectively starts at GEV's 2024 spin-off) |
+| Factor set (a) | Fama-French 5 (Mkt-RF, SMB, HML, RMW, CMA) | canonical academic factors |
+| Factor set (b) | thematic ETF excess returns: SPY, TLT, SOXX, XLU, MTUM | maps to each thesis's natural drivers |
+| Standard errors | **Newey-West HAC, maxlags=5** | daily returns are autocorrelated/heteroskedastic; plain OLS t-stats overstate significance |
+| Kill-criterion beta test | **rolling 126-day (6-month) beta** to the natural comparator, 95% CI | matches the "rolling 6-month window" wording in the basket kill-criteria |
+| Significance threshold | \|t\| > 2 | conventional |
+
+**Verdict discipline.** A thesis is only marked `FAILED` when its kill-criterion is
+*actively met* (e.g. comparator-beta CI contains 1.0 **and** alpha is both small and
+insignificant). A large-but-insignificant alpha on a short, high-vol sample is
+`INDETERMINATE` (underpowered), never `FAILED` — failing to reject zero is not the
+same as zero. This is why AI-Power reads INDETERMINATE despite a +37%/yr alpha point
+estimate: the test simply lacks power over ~2 years at ~48% vol.
+
+**Event studies are NOT yet implemented.** The two event-driven theses (Onshoring
+Semis, Autonomy/Defense) name catalysts (capex/policy announcements, defense-budget
+events) whose test requires a hand-curated, dated event catalog. Until that exists,
+those kill-criteria are adjudicated only on their non-event component (comparator
+beta, alpha, R²) and explicitly marked INDETERMINATE with the missing test named.
+
 ## Open items deferred to later phases
 
-- Factor set, regression windows, and t-stat conventions → **Phase 3** (will be
-  chosen and documented here before any regression is run; the owner is consulted
-  on window length).
-- Per-ticker positioning via `analyze_market` and prediction-market mapping →
-  **Phase 2+**, contingent on connector availability.
+- Event-study catalogs for the two event-driven theses (dated catalyst lists +
+  abnormal-return windows).
+- Prediction-market mapping, contingent on the connector leaving paper mode.

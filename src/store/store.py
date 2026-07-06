@@ -82,8 +82,15 @@ def _append_jsonl(path: Path, rows: Iterable[dict]) -> int:
 
 # --- append API -------------------------------------------------------------
 
-# Columns that define whether a re-fetch "agrees" with what we already logged.
-_PRICE_VALUE_COLS = ("open", "high", "low", "close", "adj_close", "volume")
+# Columns that define whether a re-fetch "agrees" with already-logged history.
+# Only the RAW close and volume are the immutability anchor: they are the
+# point-in-time record and should never change for a past date. We deliberately
+# do NOT include adj_close/open/high/low here — adj_close is *vendor-revisable*
+# (a new dividend retroactively re-adjusts the whole back-history), so a differing
+# adj_close on re-fetch is expected, not a conflict. On an agreeing (close,volume)
+# re-fetch we keep the first-observed row unchanged. See docs/limitations.md.
+_PRICE_VALUE_COLS = ("close", "volume")
+_CONFLICT_REL_TOL = 1e-4
 
 
 def append_prices(records) -> int:
@@ -101,7 +108,8 @@ def append_prices(records) -> int:
         if key in existing:
             prior = existing[key]
             disagree = any(
-                _num_differs(prior.get(c), rec.get(c)) for c in _PRICE_VALUE_COLS
+                _num_differs(prior.get(c), rec.get(c), rel=_CONFLICT_REL_TOL)
+                for c in _PRICE_VALUE_COLS
             )
             if disagree:
                 raise ConflictError(
