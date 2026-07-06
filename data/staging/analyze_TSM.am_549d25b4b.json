@@ -1,0 +1,111 @@
+{
+  "symbol": "xyz:TSM",
+  "ticker": {
+    "coin": "xyz:TSM",
+    "markPx": "444.83",
+    "funding": "0.0018%",
+    "openInterest": "$8,092,969",
+    "dayNtlVlm": "2048505.74278",
+    "prevDayPx": "447.15",
+    "change24h": "-0.52%",
+    "maxLeverage": 10
+  },
+  "sections": {
+    "size": {
+      "coin": "xyz:TSM",
+      "createdAt": "2026-07-06T06:28:04.176Z",
+      "breakdownBySize": [
+        {
+          "size": "$100k-$250k",
+          "minSize": 100000,
+          "maxSize": 250000,
+          "positionCount": 8,
+          "totalPositionValue": 1438331.3435,
+          "totalPositionValueLong": 924724.145,
+          "bias": 0.643
+        },
+        {
+          "size": ">$2,5m",
+          "minSize": 2500000,
+          "maxSize": null,
+          "positionCount": 0,
+          "totalPositionValue": 0,
+          "totalPositionValueLong": 0,
+          "bias": null
+        },
+        {
+          "size": "$25k-$50k",
+          "minSize": 25000,
+          "maxSize": 50000,
+          "positionCount": 18,
+          "totalPositionValue": 590396.6995,
+          "totalPositionValueLong": 315448.59750000003,
+          "bias": 0.534
+        },
+        {
+          "size": "$1k-$10k",
+          "minSize": 1000,
+          "maxSize": 10000,
+          "positionCount": 89,
+          "totalPositionValue": 314959.47825,
+          "totalPositionValueLong": 269547.35475,
+          "bias": 0.856
+        },
+        {
+          "size": "$500k-$1m",
+          "minSize": 500000,
+          "maxSize": 1000000,
+          "positionCount": 1,
+          "totalPositionValue": 655887.59025,
+          "totalPositionValueLong": 655887.59025,
+          "bias": 1
+        },
+        {
+          "size": "$50k-$100k",
+          "minSize": 50000,
+          "maxSize": 100000,
+          "positionCount": 20,
+          "totalPositionValue": 1504259.37625,
+          "totalPositionValueLong": 1127805.48025,
+          "bias": 0.75
+        },
+        {
+          "size": "$250k-$500k",
+          "minSize": 250000,
+          "maxSize": 500000,
+          "positionCount": 6,
+          "totalPositionValue": 2091973.69425,
+          "totalPositionValueLong": 437607.574,
+          "bias": 0.209
+        },
+        {
+          "size": "$10k-$25k",
+          "minSize": 10000,
+          "maxSize": 25000,
+          "positionCount": 23,
+          "totalPositionValue": 390096.36925,
+          "totalPositionValueLong": 260447.782,
+          "bias": 0.668
+        },
+        {
+          "size": "<$1k",
+          "minSize": null,
+          "maxSize": 1000,
+          "positionCount": 296,
+          "totalPositionValue": 60157.22525,
+          "totalPositionValueLong": 51779.1145,
+          "bias": 0.861
+        },
+        {
+          "size": "$1m-$2,5m",
+          "minSize": 1000000,
+          "maxSize": 2500000,
+          "positionCount": 1,
+          "totalPositionValue": 1040433.5,
+          "totalPositionValueLong": 0,
+          "bias": 0
+        }
+      ]
+    }
+  }
+}

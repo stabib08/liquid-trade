@@ -1,0 +1,111 @@
+{
+  "symbol": "xyz:PLTR",
+  "ticker": {
+    "coin": "xyz:PLTR",
+    "markPx": "128.77",
+    "funding": "0.0006%",
+    "openInterest": "$6,969,036",
+    "dayNtlVlm": "2467718.9166099993",
+    "prevDayPx": "131.43",
+    "change24h": "-2.02%",
+    "maxLeverage": 10
+  },
+  "sections": {
+    "size": {
+      "coin": "xyz:PLTR",
+      "createdAt": "2026-07-06T06:28:04.173Z",
+      "breakdownBySize": [
+        {
+          "size": "$50k-$100k",
+          "minSize": 50000,
+          "maxSize": 100000,
+          "positionCount": 9,
+          "totalPositionValue": 720244.41416,
+          "totalPositionValueLong": 245456.78038,
+          "bias": 0.341
+        },
+        {
+          "size": ">$2,5m",
+          "minSize": 2500000,
+          "maxSize": null,
+          "positionCount": 0,
+          "totalPositionValue": 0,
+          "totalPositionValueLong": 0,
+          "bias": null
+        },
+        {
+          "size": "$1m-$2,5m",
+          "minSize": 1000000,
+          "maxSize": 2500000,
+          "positionCount": 0,
+          "totalPositionValue": 0,
+          "totalPositionValueLong": 0,
+          "bias": null
+        },
+        {
+          "size": "<$1k",
+          "minSize": null,
+          "maxSize": 1000,
+          "positionCount": 404,
+          "totalPositionValue": 92316.20602000001,
+          "totalPositionValueLong": 67042.24992,
+          "bias": 0.726
+        },
+        {
+          "size": "$100k-$250k",
+          "minSize": 100000,
+          "maxSize": 250000,
+          "positionCount": 10,
+          "totalPositionValue": 1744382.20124,
+          "totalPositionValueLong": 350316.34766,
+          "bias": 0.201
+        },
+        {
+          "size": "$250k-$500k",
+          "minSize": 250000,
+          "maxSize": 500000,
+          "positionCount": 4,
+          "totalPositionValue": 1642972.86046,
+          "totalPositionValueLong": 1148755.9736000001,
+          "bias": 0.699
+        },
+        {
+          "size": "$25k-$50k",
+          "minSize": 25000,
+          "maxSize": 50000,
+          "positionCount": 14,
+          "totalPositionValue": 459462.9582800001,
+          "totalPositionValueLong": 276900.93986000004,
+          "bias": 0.603
+        },
+        {
+          "size": "$500k-$1m",
+          "minSize": 500000,
+          "maxSize": 1000000,
+          "positionCount": 2,
+          "totalPositionValue": 1291365.72218,
+          "totalPositionValueLong": 757581.72802,
+          "bias": 0.587
+        },
+        {
+          "size": "$10k-$25k",
+          "minSize": 10000,
+          "maxSize": 25000,
+          "positionCount": 32,
+          "totalPositionValue": 525430.38694,
+          "totalPositionValueLong": 278629.98334000004,
+          "bias": 0.53
+        },
+        {
+          "size": "$1k-$10k",
+          "minSize": 1000,
+          "maxSize": 10000,
+          "positionCount": 136,
+          "totalPositionValue": 436342.12392000004,
+          "totalPositionValueLong": 331574.43382000003,
+          "bias": 0.76
+        }
+      ]
+    }
+  }
+}

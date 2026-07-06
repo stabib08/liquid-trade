@@ -1,0 +1,56 @@
+name: daily-ingest
+
+# Persistence-first: this cron appends a fresh point-in-time price snapshot to the
+# immutable JSONL log every trading day and commits it back to the repo, so the
+# longitudinal dataset accumulates hands-off. Positioning is NOT captured here —
+# the Co-Invest MCP connector is session-only and unreachable from a headless
+# runner; the PositioningProvider degrades gracefully (logs and continues).
+
+on:
+  schedule:
+    # 22:10 UTC Tue–Sat = after the US market close on Mon–Fri (close is 20:00–21:00
+    # UTC depending on DST). Cron runs in UTC; Sat catches Friday's close.
+    - cron: "10 22 * * 2-6"
+  workflow_dispatch: {}   # allow manual runs
+
+permissions:
+  contents: write         # to commit the appended log back to the repo
+
+concurrency:
+  group: daily-ingest
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install pinned deps
+        run: pip install -r requirements.txt
+
+      - name: Take snapshot (recent window; log already holds history)
+        run: python -m src.ingest.snapshot --period 5d
+
+      - name: Run lookahead guard
+        run: python tests/test_lookahead.py
+
+      - name: Recompute analytics + report
+        run: python -m src.report.build || echo "analytics step skipped (pre-Phase-3 clone)"
+
+      - name: Commit appended log + refreshed report
+        run: |
+          git config user.name  "liquid-trade bot"
+          git config user.email "actions@github.com"
+          git add data/snapshots src/report/out report 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No new data to commit."
+          else
+            git commit -m "chore(ingest): daily snapshot $(date -u +%Y-%m-%d)"
+            git push
+          fi
