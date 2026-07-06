@@ -1,0 +1,78 @@
+{
+  "capture_note": "market-wide top-N cohort bias; not per-ticker. limit=10.",
+  "fetched_at": "2026-07-06T06:31:10.970893+00:00",
+  "long_heavy": [
+    {
+      "display_notional": "$3.7B",
+      "long_pct": 0.5,
+      "notional_usd": 3700000000,
+      "position_count": 53102,
+      "symbol": "BTC"
+    },
+    {
+      "display_notional": "$2.5B",
+      "long_pct": 0.5,
+      "notional_usd": 2500000000,
+      "position_count": 32522,
+      "symbol": "HYPE"
+    },
+    {
+      "display_notional": "$2.4B",
+      "long_pct": 0.5,
+      "notional_usd": 2400000000,
+      "position_count": 26472,
+      "symbol": "ETH"
+    },
+    {
+      "display_notional": "$763.7M",
+      "long_pct": 0.5,
+      "notional_usd": 763700000,
+      "position_count": 18780,
+      "symbol": "SOL"
+    },
+    {
+      "display_notional": "$692.1M",
+      "long_pct": 0.5,
+      "notional_usd": 692100000,
+      "position_count": 10512,
+      "symbol": "NASDAQ100"
+    },
+    {
+      "display_notional": "$619.4M",
+      "long_pct": 0.5,
+      "notional_usd": 619400000,
+      "position_count": 13886,
+      "symbol": "SP500"
+    },
+    {
+      "display_notional": "$563.5M",
+      "long_pct": 0.5,
+      "notional_usd": 563500000,
+      "position_count": 17878,
+      "symbol": "SPACEX"
+    },
+    {
+      "display_notional": "$385.9M",
+      "long_pct": 0.5,
+      "notional_usd": 385900000,
+      "position_count": 6272,
+      "symbol": "CL"
+    },
+    {
+      "display_notional": "$376.9M",
+      "long_pct": 0.5,
+      "notional_usd": 376900000,
+      "position_count": 4196,
+      "symbol": "SKHX"
+    },
+    {
+      "display_notional": "$362.2M",
+      "long_pct": 0.5,
+      "notional_usd": 362200000,
+      "position_count": 4678,
+      "symbol": "MU"
+    }
+  ],
+  "short_heavy": [],
+  "source": "coinvest:get_positioning_pulse"
+}

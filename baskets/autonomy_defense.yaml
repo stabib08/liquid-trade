@@ -1,0 +1,42 @@
+schema_version: 1
+id: autonomy_defense
+name: Autonomy / Defense
+version: 2026.07.05
+created: 2026-07-05
+
+thesis: >
+  A structural shift in defense procurement toward software-defined systems and
+  attritable (low-cost, expendable) autonomous hardware re-rates a cohort of
+  non-prime contractors. The claim has two testable parts: (1) it rides a budget
+  regime change rather than the equity-market cycle, so it should show LOW market
+  beta and behave as a diversifier; and (2) it responds measurably to defense-budget
+  and geopolitical catalysts.
+
+falsifiable_prediction: >
+  Basket market beta (to SPY) is materially below 1, the basket earns positive alpha
+  to a defense-sector factor (ITA/XAR), and it shows positive abnormal return around
+  defense-budget / major geopolitical events (event study, Phase 3).
+
+kill_criterion: >
+  If market beta is >= ~1.2 with no measurable budget-event sensitivity (event-window
+  abnormal return ~ 0, no alpha to ITA/XAR), then this is just high-beta tech wearing
+  a defense label — the "diversifier / budget-regime" claim is falsified.
+
+constituents: [PLTR, KTOS, AVAV]
+weighting_scheme: market_cap_snapshot
+rebalance: monthly
+
+primary_benchmark: ITA
+natural_comparator: XAR      # equal-weight aerospace/defense — the cleaner comparator
+
+factor_tickers: [SPY, ITA, XAR]
+
+# PLTR trades on Liquid as an equity perp (appeared in probe); KTOS/AVAV did not.
+positioning_symbols: [PLTR]
+
+notes: >
+  PLTR is the obvious confound: it is widely held as an AI/software momentum name,
+  not primarily a defense name. Under market-cap weighting it will dominate. Report
+  the basket both WITH and WITHOUT PLTR in Phase 3 — if the low-beta/diversifier
+  result only holds because of KTOS/AVAV, say so; if PLTR is dragging market beta up,
+  that is itself the kill-criterion firing.

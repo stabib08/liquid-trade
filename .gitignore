@@ -1,0 +1,20 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Data store: the DuckDB file is a *cache* that is fully rebuildable from the
+# append-only snapshot log (data/snapshots/*.jsonl), which IS committed.
+# Committing the binary .duckdb would create noisy diffs and merge conflicts.
+data/store.duckdb
+data/store.duckdb.wal
+
+# OS
+.DS_Store
+
+# Node (dashboard, added in Phase 4)
+node_modules/
+.next/
+.vercel/

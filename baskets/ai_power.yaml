@@ -1,0 +1,49 @@
+schema_version: 1
+id: ai_power
+name: AI Power Demand
+version: 2026.07.05
+created: 2026-07-05
+
+thesis: >
+  Structural datacenter load growth (AI training + inference) re-rates the
+  independent power producers, merchant nuclear operators, and grid-equipment
+  suppliers that can actually sell incremental electrons into a supply-constrained
+  market. The claim is that this cohort DECOUPLES from the regulated-utility
+  multiple: their earnings become a call option on load growth priced on power
+  demand and PPA economics, not on an allowed regulated return on rate base.
+
+# A prediction that can be shown FALSE with the data we collect.
+falsifiable_prediction: >
+  Over the tracking horizon, the basket earns positive, statistically distinguishable
+  alpha (t-stat > ~2) to a regulated-utility factor (XLU) after controlling for the
+  broad market (SPY). I.e. the basket is not merely levered XLU.
+
+# The condition under which I concede the thesis is dead.
+kill_criterion: >
+  If, on a rolling 6-month window, basket beta to XLU is indistinguishable from 1
+  (95% CI contains 1.0) AND the XLU-alpha intercept is indistinguishable from 0,
+  then "AI power is structurally different" is falsified — these are just utilities
+  and the correct exposure is the cheaper, more liquid XLU.
+
+constituents: [VST, CEG, GEV, TLN]
+# Weights are NOT hardcoded. They are derived at analysis time from point-in-time
+# market-cap snapshots stored in the append-only log (weighting_scheme below).
+# This avoids both stale hardcoded weights and any historical-cap lookahead.
+weighting_scheme: market_cap_snapshot
+rebalance: monthly            # re-derive weights from the month-end cap snapshot
+
+primary_benchmark: XLU        # what a skeptic would say this "just is"
+natural_comparator: XLU       # the ETF that makes the falsification test real
+
+# Extra tickers to pull so the factor regressions in Phase 3 can run.
+factor_tickers: [SPY, XLU, GEV, TLT]
+
+# Liquid/Co-Invest positioning coverage discovered during the Phase 1 probe.
+# Empty here: none of VST/CEG/GEV/TLN are tradeable on Liquid (see
+# docs/coinvest_capabilities.md). Positioning overlay will log-and-skip.
+positioning_symbols: []
+
+notes: >
+  GEV (GE Vernova) is grid equipment rather than a merchant generator; it is the
+  "picks and shovels" leg. Watch whether it drives the alpha (equipment cycle) vs.
+  the merchant generators (power-price cycle) — the interpretation differs.

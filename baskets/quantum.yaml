@@ -1,0 +1,45 @@
+schema_version: 1
+id: quantum
+name: Quantum
+version: 2026.07.05
+created: 2026-07-05
+
+# This is the EXPLICITLY SPECULATIVE sleeve. Labeling it as such is the point.
+speculative: true
+
+thesis: >
+  Pure-play quantum-computing equities are pre-revenue optionality: prices are set
+  by milestone/narrative catalysts (qubit counts, error-correction demos, government
+  awards) and by long-duration discount-rate sensitivity, not by current fundamentals.
+  The honest claim is not "this outperforms" — it is "this behaves like a lottery
+  ticket on a long-dated real option, and its risk signature (very high vol, rate
+  sensitivity, jump-on-milestone) is distinguishable from a generic growth basket."
+
+falsifiable_prediction: >
+  The basket exhibits (a) realized volatility well above ARKK, (b) a positive,
+  significant loading on long-duration rates (TLT), and (c) discrete milestone-event
+  jumps in the return series.
+
+# Honesty flag rather than a P&L kill: the failure mode here is being INDISTINCT.
+kill_criterion: >
+  If the basket's return signature is statistically indistinguishable from ARKK
+  (beta ~ 1 to ARKK, no incremental TLT loading, no idiosyncratic milestone jumps),
+  then it carries no information beyond "long speculative growth" and should be
+  labeled as such — i.e. it is just ARKK with extra steps.
+
+constituents: [IONQ, RGTI]
+weighting_scheme: market_cap_snapshot
+rebalance: monthly
+
+primary_benchmark: ARKK       # the honest "what is this really" comparator
+natural_comparator: ARKK
+
+factor_tickers: [SPY, TLT, ARKK, QQQ]
+
+# Neither IONQ nor RGTI resolved on Liquid in the probe. No positioning overlay.
+positioning_symbols: []
+
+notes: >
+  Two names only, both small/mid-cap and highly volatile — market-cap weighting will
+  swing hard toward whichever has run recently. Expect wide error bars on every stat;
+  report them honestly and do not over-interpret a short sample.
