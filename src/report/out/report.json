@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-07-06T07:02:03.512348+00:00",
-    "code_version": "4a2965b-dirty",
+    "generated_at": "2026-07-06T07:06:33.115476+00:00",
+    "code_version": "8c437b4-dirty",
     "python_version": "3.12.0",
     "price_source": "yfinance",
     "factor_source": "Ken French Data Library (FF5 daily)",
