@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated_at": "2026-07-06T07:06:33.115476+00:00",
-    "code_version": "8c437b4-dirty",
-    "python_version": "3.12.0",
+    "generated_at": "2026-07-07T23:18:36.078043+00:00",
+    "code_version": "0caeb60-dirty",
+    "python_version": "3.12.13",
     "price_source": "yfinance",
     "factor_source": "Ken French Data Library (FF5 daily)",
     "risk_free": "FF daily RF",
@@ -12,14 +12,14 @@
     "rolling_beta_window_days": 126,
     "price_dates": [
       "1980-03-17",
-      "2026-07-02"
+      "2026-07-07"
     ],
     "factor_dates": [
       "1963-07-01",
       "2026-05-29"
     ],
-    "n_ingest_runs": 4,
-    "last_ingest": "2026-07-05 23:50:39.559025-07:00",
+    "n_ingest_runs": 5,
+    "last_ingest": "2026-07-07 23:11:13.141537+00:00",
     "assumptions_note": "Market-cap weighting; Newey-West t-stats; rolling 6-month (126d) beta for kill-criteria. See docs/methodology.md. Event studies for the two event-driven theses are not yet implemented."
   },
   "baskets": [
@@ -39,7 +39,7 @@
       "primary_benchmark": "XLU",
       "natural_comparator": "XLU",
       "weighting_scheme": "market_cap_snapshot",
-      "effective_n": 2.058151,
+      "effective_n": 2.103637,
       "verdict": {
         "verdict": "INDETERMINATE",
         "headline": "XLU \u03b2=0.83, \u03b1=+37.1%/yr",
@@ -47,45 +47,45 @@
         "evidence": [
           "XLU beta (market-controlled) = 0.83 (t=6.1).",
           "Alpha to utilities = +37.1%/yr (t=1.6).",
-          "Latest rolling-126d XLU beta = 0.82, 95% CI [0.42, 1.22] (contains 1.0)."
+          "Latest rolling-126d XLU beta = 0.76, 95% CI [0.35, 1.18] (contains 1.0)."
         ],
         "untestable_now": []
       },
       "performance": {
         "basket": {
-          "n_obs": 567,
+          "n_obs": 569,
           "start": "2024-03-28",
-          "end": "2026-07-02",
-          "cumulative_return": 3.294306,
-          "annualized_return": 0.91111,
-          "annualized_vol": 0.478498,
-          "sharpe": 1.502324,
-          "sortino": 1.94489,
+          "end": "2026-07-07",
+          "cumulative_return": 3.219928,
+          "annualized_return": 0.892067,
+          "annualized_vol": 0.479407,
+          "sharpe": 1.479786,
+          "sortino": 1.916624,
           "max_drawdown": -0.425821
         },
         "benchmark": {
-          "n_obs": 6922,
+          "n_obs": 6924,
           "start": "1998-12-23",
-          "end": "2026-07-02",
-          "cumulative_return": 6.896058,
-          "annualized_return": 0.078129,
-          "annualized_vol": 0.192569,
-          "sharpe": 0.381619,
-          "sortino": 0.511342,
+          "end": "2026-07-07",
+          "cumulative_return": 6.885705,
+          "annualized_return": 0.078054,
+          "annualized_vol": 0.192558,
+          "sharpe": 0.381299,
+          "sortino": 0.510963,
           "max_drawdown": -0.522724
         },
         "comparator": {
-          "n_obs": 6922,
+          "n_obs": 6924,
           "start": "1998-12-23",
-          "end": "2026-07-02",
-          "cumulative_return": 6.896058,
-          "annualized_return": 0.078129,
-          "annualized_vol": 0.192569,
-          "sharpe": 0.381619,
-          "sortino": 0.511342,
+          "end": "2026-07-07",
+          "cumulative_return": 6.885705,
+          "annualized_return": 0.078054,
+          "annualized_vol": 0.192558,
+          "sharpe": 0.381299,
+          "sortino": 0.510963,
           "max_drawdown": -0.522724
         },
-        "vol_ratio_vs_comparator": 2.484817
+        "vol_ratio_vs_comparator": 2.489674
       },
       "factors": {
         "ff5": {
@@ -158,9 +158,9 @@
           "hac_lags": 5
         },
         "rolling_comparator_beta_latest": {
-          "beta": 0.821661,
-          "ci_low": 0.421713,
-          "ci_high": 1.221608
+          "beta": 0.763149,
+          "ci_low": 0.350383,
+          "ci_high": 1.175915
         }
       },
       "equity_curves": {
@@ -731,7 +731,9 @@
           "2026-06-29",
           "2026-06-30",
           "2026-07-01",
-          "2026-07-02"
+          "2026-07-02",
+          "2026-07-06",
+          "2026-07-07"
         ],
         "basket": [
           1.016,
@@ -1300,7 +1302,9 @@
           4.2205,
           4.3441,
           4.3441,
-          4.2943
+          4.2943,
+          4.4416,
+          4.2199
         ],
         "benchmark": [
           1.0069,
@@ -1869,7 +1873,9 @@
           1.5058,
           1.4835,
           1.4649,
-          1.4972
+          1.4972,
+          1.4822,
+          1.4953
         ],
         "comparator": [
           1.0069,
@@ -2438,7 +2444,9 @@
           1.5058,
           1.4835,
           1.4649,
-          1.4972
+          1.4972,
+          1.4822,
+          1.4953
         ]
       },
       "rolling_sharpe": {
@@ -2947,7 +2955,9 @@
           "2026-06-29",
           "2026-06-30",
           "2026-07-01",
-          "2026-07-02"
+          "2026-07-02",
+          "2026-07-06",
+          "2026-07-07"
         ],
         "values": [
           2.376,
@@ -3454,7 +3464,9 @@
           1.687,
           2.284,
           2.076,
-          1.967
+          1.967,
+          2.314,
+          1.797
         ]
       },
       "rolling_beta_series": {
@@ -3900,7 +3912,9 @@
           "2026-06-29",
           "2026-06-30",
           "2026-07-01",
-          "2026-07-02"
+          "2026-07-02",
+          "2026-07-06",
+          "2026-07-07"
         ],
         "beta": [
           1.174,
@@ -4344,7 +4358,9 @@
           0.925,
           0.877,
           0.869,
-          0.822
+          0.822,
+          0.788,
+          0.763
         ],
         "ci_low": [
           0.653,
@@ -4788,7 +4804,9 @@
           0.52,
           0.471,
           0.465,
-          0.422
+          0.422,
+          0.385,
+          0.35
         ],
         "ci_high": [
           1.695,
@@ -5232,7 +5250,9 @@
           1.33,
           1.284,
           1.273,
-          1.222
+          1.222,
+          1.192,
+          1.176
         ]
       },
       "rolling_corr": {
@@ -5741,7 +5761,9 @@
           "2026-06-29",
           "2026-06-30",
           "2026-07-01",
-          "2026-07-02"
+          "2026-07-02",
+          "2026-07-06",
+          "2026-07-07"
         ],
         "vs_SPY": [
           0.498,
@@ -6248,7 +6270,9 @@
           0.573,
           0.573,
           0.582,
-          0.586
+          0.586,
+          0.591,
+          0.596
         ],
         "vs_QQQ": [
           0.468,
@@ -6755,7 +6779,9 @@
           0.593,
           0.593,
           0.586,
-          0.591
+          0.591,
+          0.595,
+          0.612
         ]
       }
     },
@@ -6774,7 +6800,7 @@
       "primary_benchmark": "ITA",
       "natural_comparator": "XAR",
       "weighting_scheme": "market_cap_snapshot",
-      "effective_n": 1.136965,
+      "effective_n": 1.115954,
       "verdict": {
         "verdict": "INDETERMINATE",
         "headline": "market \u03b2=1.28 (budget-event test pending)",
@@ -6790,39 +6816,39 @@
       },
       "performance": {
         "basket": {
-          "n_obs": 1444,
+          "n_obs": 1446,
           "start": "2020-10-01",
-          "end": "2026-07-02",
-          "cumulative_return": 9.401707,
-          "annualized_return": 0.504874,
-          "annualized_vol": 0.605952,
-          "sharpe": 0.920764,
-          "sortino": 1.50382,
+          "end": "2026-07-07",
+          "cumulative_return": 9.705838,
+          "annualized_return": 0.511597,
+          "annualized_vol": 0.605584,
+          "sharpe": 0.928412,
+          "sortino": 1.515389,
           "max_drawdown": -0.819037
         },
         "benchmark": {
-          "n_obs": 5070,
+          "n_obs": 5072,
           "start": "2006-05-08",
-          "end": "2026-07-02",
-          "cumulative_return": 10.841339,
-          "annualized_return": 0.130713,
-          "annualized_vol": 0.227609,
-          "sharpe": 0.581584,
-          "sortino": 0.756802,
+          "end": "2026-07-07",
+          "cumulative_return": 10.69439,
+          "annualized_return": 0.129957,
+          "annualized_vol": 0.227633,
+          "sharpe": 0.578635,
+          "sortino": 0.752997,
           "max_drawdown": -0.597215
         },
         "comparator": {
-          "n_obs": 3709,
+          "n_obs": 3711,
           "start": "2011-09-30",
-          "end": "2026-07-02",
-          "cumulative_return": 12.427042,
-          "annualized_return": 0.192994,
-          "annualized_vol": 0.224989,
-          "sharpe": 0.826773,
-          "sortino": 1.102429,
+          "end": "2026-07-07",
+          "cumulative_return": 12.042758,
+          "annualized_return": 0.190531,
+          "annualized_vol": 0.225138,
+          "sharpe": 0.817228,
+          "sortino": 1.08883,
           "max_drawdown": -0.463676
         },
-        "vol_ratio_vs_comparator": 2.693254
+        "vol_ratio_vs_comparator": 2.689833
       },
       "factors": {
         "ff5": {
@@ -6895,9 +6921,9 @@
           "hac_lags": 5
         },
         "rolling_comparator_beta_latest": {
-          "beta": 0.728429,
-          "ci_low": 0.474648,
-          "ci_high": 0.98221
+          "beta": 0.718612,
+          "ci_low": 0.46338,
+          "ci_high": 0.973844
         }
       },
       "equity_curves": {
@@ -7623,7 +7649,8 @@
           "2026-06-23",
           "2026-06-25",
           "2026-06-29",
-          "2026-07-01"
+          "2026-07-01",
+          "2026-07-06"
         ],
         "basket": [
           1.0,
@@ -8347,7 +8374,8 @@
           10.0679,
           9.2512,
           9.9433,
-          10.0878
+          10.0878,
+          10.6114
         ],
         "benchmark": [
           1.0049,
@@ -9071,7 +9099,8 @@
           3.1223,
           3.1415,
           3.1646,
-          3.2272
+          3.2272,
+          3.3188
         ],
         "comparator": [
           1.0143,
@@ -9795,7 +9824,8 @@
           3.2556,
           3.2256,
           3.2753,
-          3.3714
+          3.3714,
+          3.426
         ]
       },
       "rolling_sharpe": {
@@ -10490,7 +10520,8 @@
           "2026-06-23",
           "2026-06-25",
           "2026-06-29",
-          "2026-07-01"
+          "2026-07-01",
+          "2026-07-06"
         ],
         "values": [
           4.21,
@@ -11183,7 +11214,8 @@
           -2.569,
           -2.873,
           -1.748,
-          -1.874
+          -1.874,
+          -1.567
         ]
       },
       "rolling_beta_series": {
@@ -11847,7 +11879,8 @@
           "2026-06-24",
           "2026-06-26",
           "2026-06-30",
-          "2026-07-02"
+          "2026-07-02",
+          "2026-07-07"
         ],
         "beta": [
           0.721,
@@ -12509,7 +12542,8 @@
           0.715,
           0.727,
           0.728,
-          0.728
+          0.728,
+          0.719
         ],
         "ci_low": [
           0.178,
@@ -13171,7 +13205,8 @@
           0.47,
           0.474,
           0.475,
-          0.475
+          0.475,
+          0.463
         ],
         "ci_high": [
           1.264,
@@ -13833,7 +13868,8 @@
           0.96,
           0.981,
           0.981,
-          0.982
+          0.982,
+          0.974
         ]
       },
       "rolling_corr": {
@@ -14528,7 +14564,8 @@
           "2026-06-23",
           "2026-06-25",
           "2026-06-29",
-          "2026-07-01"
+          "2026-07-01",
+          "2026-07-06"
         ],
         "vs_SPY": [
           0.14,
@@ -15221,7 +15258,8 @@
           0.389,
           0.379,
           0.319,
-          0.249
+          0.249,
+          0.248
         ],
         "vs_QQQ": [
           0.188,
@@ -15914,7 +15952,8 @@
           0.369,
           0.352,
           0.29,
-          0.232
+          0.232,
+          0.211
         ]
       }
     },
@@ -15933,7 +15972,7 @@
       "primary_benchmark": "SOXX",
       "natural_comparator": "SOXX",
       "weighting_scheme": "market_cap_snapshot",
-      "effective_n": 2.020057,
+      "effective_n": 1.984051,
       "verdict": {
         "verdict": "INDETERMINATE",
         "headline": "SOXX \u03b2=0.77, R\u00b2=0.68 (event study pending)",
@@ -15949,39 +15988,39 @@
       },
       "performance": {
         "basket": {
-          "n_obs": 7225,
+          "n_obs": 7227,
           "start": "1997-10-10",
-          "end": "2026-07-02",
-          "cumulative_return": 30.62137,
-          "annualized_return": 0.128022,
-          "annualized_vol": 0.385504,
-          "sharpe": 0.448442,
-          "sortino": 0.659795,
+          "end": "2026-07-07",
+          "cumulative_return": 30.109125,
+          "annualized_return": 0.127342,
+          "annualized_vol": 0.385588,
+          "sharpe": 0.446882,
+          "sortino": 0.657442,
           "max_drawdown": -0.814385
         },
         "benchmark": {
-          "n_obs": 6278,
+          "n_obs": 6280,
           "start": "2001-07-16",
-          "end": "2026-07-02",
-          "cumulative_return": 27.479611,
-          "annualized_return": 0.143893,
-          "annualized_vol": 0.334683,
-          "sharpe": 0.518059,
-          "sortino": 0.742244,
+          "end": "2026-07-07",
+          "cumulative_return": 26.743884,
+          "annualized_return": 0.142643,
+          "annualized_vol": 0.334833,
+          "sharpe": 0.514731,
+          "sortino": 0.737186,
           "max_drawdown": -0.70213
         },
         "comparator": {
-          "n_obs": 6278,
+          "n_obs": 6280,
           "start": "2001-07-16",
-          "end": "2026-07-02",
-          "cumulative_return": 27.479611,
-          "annualized_return": 0.143893,
-          "annualized_vol": 0.334683,
-          "sharpe": 0.518059,
-          "sortino": 0.742244,
+          "end": "2026-07-07",
+          "cumulative_return": 26.743884,
+          "annualized_return": 0.142643,
+          "annualized_vol": 0.334833,
+          "sharpe": 0.514731,
+          "sortino": 0.737186,
           "max_drawdown": -0.70213
         },
-        "vol_ratio_vs_comparator": 1.151847
+        "vol_ratio_vs_comparator": 1.151583
       },
       "factors": {
         "ff5": {
@@ -16054,9 +16093,9 @@
           "hac_lags": 5
         },
         "rolling_comparator_beta_latest": {
-          "beta": 0.702376,
-          "ci_low": 0.619149,
-          "ci_high": 0.785603
+          "beta": 0.719203,
+          "ci_low": 0.638057,
+          "ci_high": 0.80035
         }
       },
       "equity_curves": {
@@ -19758,7 +19797,8 @@
           "2026-05-13",
           "2026-05-27",
           "2026-06-09",
-          "2026-06-23"
+          "2026-06-23",
+          "2026-07-07"
         ],
         "values": [
           -3.542,
@@ -20556,7 +20596,8 @@
           1.036,
           0.919,
           1.938,
-          2.19
+          2.19,
+          2.9
         ]
       },
       "rolling_beta_series": {
@@ -24446,7 +24487,8 @@
           "2026-05-13",
           "2026-05-27",
           "2026-06-09",
-          "2026-06-23"
+          "2026-06-23",
+          "2026-07-07"
         ],
         "vs_SPY": [
           0.721,
@@ -25244,7 +25286,8 @@
           0.787,
           0.802,
           0.784,
-          0.773
+          0.773,
+          0.779
         ],
         "vs_QQQ": [
           null,
@@ -26042,7 +26085,8 @@
           0.801,
           0.816,
           0.797,
-          0.824
+          0.824,
+          0.84
         ]
       }
     },
@@ -26060,7 +26104,7 @@
       "primary_benchmark": "ARKK",
       "natural_comparator": "ARKK",
       "weighting_scheme": "market_cap_snapshot",
-      "effective_n": 1.58825,
+      "effective_n": 1.587769,
       "verdict": {
         "verdict": "SURVIVES",
         "headline": "ARKK \u03b2=0.97, TLT t=0.3",
@@ -26074,39 +26118,39 @@
       },
       "performance": {
         "basket": {
-          "n_obs": 1304,
+          "n_obs": 1306,
           "start": "2021-04-23",
-          "end": "2026-07-02",
-          "cumulative_return": 5.475552,
-          "annualized_return": 0.434764,
-          "annualized_vol": 0.920654,
-          "sharpe": 0.806471,
-          "sortino": 1.347578,
+          "end": "2026-07-07",
+          "cumulative_return": 4.978383,
+          "annualized_return": 0.412037,
+          "annualized_vol": 0.920567,
+          "sharpe": 0.789164,
+          "sortino": 1.318489,
           "max_drawdown": -0.882295
         },
         "benchmark": {
-          "n_obs": 2932,
+          "n_obs": 2934,
           "start": "2014-11-03",
-          "end": "2026-07-02",
-          "cumulative_return": 3.4178,
-          "annualized_return": 0.136199,
-          "annualized_vol": 0.382888,
-          "sharpe": 0.47264,
-          "sortino": 0.66663,
+          "end": "2026-07-07",
+          "cumulative_return": 3.414538,
+          "annualized_return": 0.136028,
+          "annualized_vol": 0.382946,
+          "sharpe": 0.472269,
+          "sortino": 0.666355,
           "max_drawdown": -0.809141
         },
         "comparator": {
-          "n_obs": 2932,
+          "n_obs": 2934,
           "start": "2014-11-03",
-          "end": "2026-07-02",
-          "cumulative_return": 3.4178,
-          "annualized_return": 0.136199,
-          "annualized_vol": 0.382888,
-          "sharpe": 0.47264,
-          "sortino": 0.66663,
+          "end": "2026-07-07",
+          "cumulative_return": 3.414538,
+          "annualized_return": 0.136028,
+          "annualized_vol": 0.382946,
+          "sharpe": 0.472269,
+          "sortino": 0.666355,
           "max_drawdown": -0.809141
         },
-        "vol_ratio_vs_comparator": 2.404498
+        "vol_ratio_vs_comparator": 2.403906
       },
       "factors": {
         "ff5": {
@@ -26179,9 +26223,9 @@
           "hac_lags": 5
         },
         "rolling_comparator_beta_latest": {
-          "beta": 1.756329,
-          "ci_low": 1.442447,
-          "ci_high": 2.07021
+          "beta": 1.753822,
+          "ci_low": 1.440892,
+          "ci_high": 2.066753
         }
       },
       "equity_curves": {
@@ -26837,7 +26881,8 @@
           "2026-06-23",
           "2026-06-25",
           "2026-06-29",
-          "2026-07-01"
+          "2026-07-01",
+          "2026-07-06"
         ],
         "basket": [
           1.0057,
@@ -27491,7 +27536,8 @@
           7.3764,
           6.4308,
           6.8377,
-          6.7679
+          6.7679,
+          6.4525
         ],
         "benchmark": [
           1.0189,
@@ -28145,7 +28191,8 @@
           0.6421,
           0.6409,
           0.6752,
-          0.6854
+          0.6854,
+          0.7001
         ],
         "comparator": [
           1.0189,
@@ -28799,7 +28846,8 @@
           0.6421,
           0.6409,
           0.6752,
-          0.6854
+          0.6854,
+          0.7001
         ]
       },
       "rolling_sharpe": {
@@ -29424,7 +29472,8 @@
           "2026-06-23",
           "2026-06-25",
           "2026-06-29",
-          "2026-07-01"
+          "2026-07-01",
+          "2026-07-06"
         ],
         "values": [
           -1.187,
@@ -30047,7 +30096,8 @@
           2.534,
           2.134,
           2.937,
-          2.732
+          2.732,
+          2.34
         ]
       },
       "rolling_beta_series": {
@@ -30641,7 +30691,8 @@
           "2026-06-24",
           "2026-06-26",
           "2026-06-30",
-          "2026-07-02"
+          "2026-07-02",
+          "2026-07-07"
         ],
         "beta": [
           0.162,
@@ -31233,7 +31284,8 @@
           1.79,
           1.75,
           1.753,
-          1.756
+          1.756,
+          1.754
         ],
         "ci_low": [
           0.029,
@@ -31825,7 +31877,8 @@
           1.471,
           1.433,
           1.44,
-          1.442
+          1.442,
+          1.441
         ],
         "ci_high": [
           0.294,
@@ -32417,7 +32470,8 @@
           2.11,
           2.068,
           2.065,
-          2.07
+          2.07,
+          2.067
         ]
       },
       "rolling_corr": {
@@ -33042,7 +33096,8 @@
           "2026-06-23",
           "2026-06-25",
           "2026-06-29",
-          "2026-07-01"
+          "2026-07-01",
+          "2026-07-06"
         ],
         "vs_SPY": [
           0.133,
@@ -33665,7 +33720,8 @@
           0.594,
           0.591,
           0.577,
-          0.561
+          0.561,
+          0.565
         ],
         "vs_QQQ": [
           0.11,
@@ -34288,7 +34344,8 @@
           0.593,
           0.586,
           0.573,
-          0.544
+          0.544,
+          0.553
         ]
       }
     }
@@ -34303,32 +34360,32 @@
     "matrix": [
       [
         1.0,
-        0.428,
-        0.638,
-        0.381
-      ],
-      [
-        0.428,
-        1.0,
-        0.397,
-        0.422
-      ],
-      [
-        0.638,
-        0.397,
-        1.0,
+        0.427,
+        0.641,
         0.383
       ],
       [
-        0.381,
-        0.422,
+        0.427,
+        1.0,
+        0.395,
+        0.421
+      ],
+      [
+        0.641,
+        0.395,
+        1.0,
+        0.385
+      ],
+      [
         0.383,
+        0.421,
+        0.385,
         1.0
       ]
     ],
     "window": [
       "2024-03-28",
-      "2026-07-02"
+      "2026-07-07"
     ]
   },
   "positioning_overlay": {
@@ -34340,7 +34397,7 @@
         "mark_px": 128.77,
         "open_interest_usd": 6969036.0,
         "position_count": 611.0,
-        "as_of": "2026-07-05 23:28:04.173000-07:00"
+        "as_of": "2026-07-06 06:28:04.173000+00:00"
       },
       "TSM": {
         "retail_long_frac": 0.76,
@@ -34349,7 +34406,7 @@
         "mark_px": 444.83,
         "open_interest_usd": 8092969.0,
         "position_count": 462.0,
-        "as_of": "2026-07-05 23:28:04.176000-07:00"
+        "as_of": "2026-07-06 06:28:04.176000+00:00"
       }
     },
     "pulse": [
